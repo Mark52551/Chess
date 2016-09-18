@@ -5,10 +5,11 @@ using namespace std;
 
 class Game
 {
+	int board([8][8]);
 
 public:
 
-	void display_board()
+	void display_board(int board[8][8])
 	{
 		//Here I will chose how I want to display my board.
 	}
