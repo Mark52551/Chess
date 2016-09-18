@@ -7,9 +7,6 @@ using namespace std;
 class Piece
 {
 
-	int moveValid;
-	int eatPiece;
-
 public:
 	//the functions that will be used to get the piece and move
 	enum Color
@@ -22,30 +19,30 @@ public:
 	};
 
 
-	void getPiece()
+	void Piece::getPiece()
 	{
 		//this will get the piece 
 	}
 
-	void getColor()
+	void Piece::getColor()
 	{
 		//this will get the color of the piece
 	}
-	void move()
+	void Piece::move()
 	{
 		//this will move the piece
 	}
 
-	void eatPiece()
-	{
-		//this will eat the piece
-	}
 
-	void moveValid()
+	void Piece::moveValid()
 	{
 		//this will be a boolean on whether the piece will be able to move or not
 	}
-
+	 
+	void Piece::eatPiece()
+	{
+		//this will eat the piece
+	}
 
 
 
