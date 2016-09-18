@@ -8,6 +8,11 @@ class Piece
 {
 	int Color;
 	int PieceType;
+	int getPiece;
+	int getColor;
+	int move;
+	int moveValid;
+	int eatPiece;
 
 public:
 	//the functions that will be used to get the piece and move

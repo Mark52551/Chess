@@ -7,13 +7,6 @@ using namespace std;
 
 Piece::Piece()
 {
-	int getPiece;
-	int getColor;
-	int move;
-	int moveValid;
-	int eatPiece;
-
-
 
 	void getPiece();
 	{

@@ -6,12 +6,7 @@ using namespace std;
 
 Game::Game()
 {
-	int board[8][8];
-	int display_board;
-	int display_piece;
-	int begin_game;
 
-	
 
 	void display_board(int board[8][8]);
 	{
