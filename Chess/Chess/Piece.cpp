@@ -37,3 +37,8 @@ Piece::Piece()
 Piece::~Piece()
 {
 }
+
+void Piece::move()
+{
+	//this will move the piece
+}

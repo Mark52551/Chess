@@ -6,12 +6,21 @@ using namespace std;
 class Game
 {
 
-	int board[8][8];
-	int display_board;
-	int display_piece;
-	int begin_game;
-
 public:
+
+	void display_board()
+	{
+		//Here I will chose how I want to display my board.
+	}
+
+	void display_piece()
+	{
+		//this will display the pieces on the board
+	}
+	void begin_game()
+	{
+		//this will begin the game
+	}
 
 	Game();
 	~Game();
