@@ -6,7 +6,26 @@ using namespace std;
 
 Game::Game()
 {
-	//display_game will the function called to print the board
+	int board[8][8];
+	int display_board;
+	int display_piece;
+	int begin_game;
+
+	
+
+	void display_board(int board[8][8]);
+	{
+		//Here I will chose how I want to display my board.
+	}
+
+	void display_piece();
+	{
+		//this will display the pieces on the board
+	}
+	void begin_game();
+	{
+		//this will begin the game
+	}
 
 }
 
