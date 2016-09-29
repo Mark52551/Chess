@@ -12,4 +12,8 @@ Piece::Piece()
 
 Piece::~Piece()
 {
+	string getName(); 
+	{
+
+	}
 }

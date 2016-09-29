@@ -19,12 +19,26 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="bishop.h" />
+    <ClInclude Include="Board.h" />
     <ClInclude Include="Game.h" />
+    <ClInclude Include="king.h" />
+    <ClInclude Include="knight.h" />
+    <ClInclude Include="pawn.h" />
     <ClInclude Include="Piece.h" />
+    <ClInclude Include="queen.h" />
+    <ClInclude Include="rook.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="bishop.cpp" />
+    <ClCompile Include="Board.cpp" />
     <ClCompile Include="Game.cpp" />
+    <ClCompile Include="king.cpp" />
+    <ClCompile Include="knight.cpp" />
+    <ClCompile Include="pawn.cpp" />
     <ClCompile Include="Piece.cpp" />
+    <ClCompile Include="queen.cpp" />
+    <ClCompile Include="rook.cpp" />
     <ClCompile Include="Source.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

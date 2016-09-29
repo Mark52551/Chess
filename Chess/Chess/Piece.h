@@ -19,21 +19,21 @@ public:
 	};
 
 
-	void Piece::getPiece()
+	virtual void Piece::getPiece()
 	{
 		//this will get the piece 
 	}
 
-	void Piece::getColor()
+	string Piece::getColor()
 	{
 		//this will get the color of the piece
 	}
-	void Piece::move()
+	virtual void Piece::move()
 	{
-		//this will move the piece
+		//the virtual move function 
+		//will be different for each piece
 	}
-
-
+	
 	void Piece::moveValid()
 	{
 		//this will be a boolean on whether the piece will be able to move or not
@@ -43,8 +43,6 @@ public:
 	{
 		//this will eat the piece
 	}
-
-
 
 	Piece();
 	~Piece();
