@@ -3,7 +3,10 @@
 using namespace std;
 
 
-
+string Piece::getPiece()
+{
+	return " ";
+}
 
 Piece::Piece()
 {
@@ -12,8 +15,5 @@ Piece::Piece()
 
 Piece::~Piece()
 {
-	string getName(); 
-	{
 
-	}
 }

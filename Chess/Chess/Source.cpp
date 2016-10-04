@@ -7,11 +7,13 @@ using namespace std;
 
 int main()
 {
+	Board myBoard;
+	myBoard.display_board();
+
+
+
 	
-
-
-	
-
+	cin.get();
 
 	
 
