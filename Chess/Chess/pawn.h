@@ -4,6 +4,8 @@ class pawn :
 	public Piece
 {
 public:
+	
+
 	pawn();
 	~pawn();
 };
