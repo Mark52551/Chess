@@ -7,8 +7,15 @@ using namespace std;
 
 int main()
 {
+	Game begin;
+	begin.welcome();
+	begin.display_player_color();
+
 	Board myBoard;
 	myBoard.display_board();
+	
+
+	
 
 
 

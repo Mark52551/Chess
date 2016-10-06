@@ -7,10 +7,9 @@ class Game
 {
 	
 public:
-	string Game::begin_game()
-	{
-		cout << "Welcome to Chess!\n" << endl;
-	}
+	void welcome();
+	void display_player_color();
+
 
 	Game();
 	~Game();

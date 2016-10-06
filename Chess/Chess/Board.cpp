@@ -7,30 +7,35 @@ void Board::display_board()
 	{
 		for (int col = 0; col < board_size; col++)
 		{
-			cout << "------";
+			cout << "-------";
 		}
 		cout << "-" << endl;
 		for (int col = 0; col < board_size; col++)
 		{
-			cout << "|" << "     ";
+			cout << "|" << "      ";
 		}
 		cout << "|" << endl;
 		for (int col = 0; col < board_size; col++)
 		{
-			cout << "|" << "     ";
+			cout << "|" << "      ";
 		}
 		cout << "|" << endl;
 		for (int col = 0; col < board_size; col++)
 		{
-			cout << "|" << "     ";
+			cout << "|" << "      ";
 		}
 		cout << "|" << endl;
 	}
 	for (int col = 0; col < board_size; col++)
 	{
-		cout << "------";
+		cout << "-------";
 	}
 	cout << "-" << endl;
+}
+
+void Board::display_piece()
+{
+	//function to display all of the pieces on the board
 }
 Board::Board()
 {
