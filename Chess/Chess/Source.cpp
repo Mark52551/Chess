@@ -13,8 +13,6 @@ int main()
 
 	Board myBoard;
 	myBoard.display_board();
-	
-
 
 	
 

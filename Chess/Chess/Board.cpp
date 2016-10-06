@@ -31,11 +31,12 @@ void Board::display_board()
 		cout << "-------";
 	}
 	cout << "-" << endl;
+	
 }
 
 void Board::display_piece()
 {
-	//function to display all of the pieces on the board
+	//display
 }
 Board::Board()
 {
