@@ -16,6 +16,11 @@ void Game::display_player_color()
 
 }
 
+void Game::player_turn()
+{
+	cout << "White Player, You will go first!" << endl;
+	cout << " " << endl;
+}
 
 Game::Game()
 {

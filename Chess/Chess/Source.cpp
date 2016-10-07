@@ -10,6 +10,7 @@ int main()
 	Game begin;
 	begin.welcome();
 	begin.display_player_color();
+	begin.player_turn();
 
 	Board myBoard;
 	myBoard.display_board();

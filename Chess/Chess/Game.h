@@ -9,7 +9,8 @@ class Game
 public:
 	void welcome();
 	void display_player_color();
-	
+	void player_turn();
+
 
 	Game();
 	~Game();

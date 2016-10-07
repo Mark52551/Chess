@@ -5,6 +5,7 @@ void move()
 	//this will move the piece
 }
 
+
 king::king()
 {
 }

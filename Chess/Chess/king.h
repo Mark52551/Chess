@@ -5,7 +5,6 @@ class king :
 {
 public:
 	void move();
-
 	king();
 	~king();
 };
