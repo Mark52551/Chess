@@ -1,6 +1,12 @@
 #pragma once
 #include <iostream>
-
+#include "Piece.h"
+#include "bishop.h"
+#include "king.h"
+#include "knight.h"
+#include "pawn.h"
+#include "queen.h"
+#include "rook.h"
 using namespace std;
 
 const int board_size = 8;
@@ -19,7 +25,7 @@ public:
 	
 
 private:
-	int board[board_size][board_size];
+	Piece * board[board_size][board_size];
 
 
 

@@ -40,7 +40,13 @@ void Board::display_piece()
 }
 Board::Board()
 {
-	
+	board[0][0] = new rook(true);
+	board[1][0] = new knight(true);
+	//continue this for the whole top row
+
+	//every other row set to null pointer
+
+	//continue for bottom row
 }
 
 

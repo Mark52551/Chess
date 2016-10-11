@@ -5,6 +5,9 @@ class rook :
 {
 public:
 	rook();
+	rook(bool);
 	~rook();
+	string getPiece();
+
 };
 

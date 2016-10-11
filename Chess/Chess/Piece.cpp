@@ -5,11 +5,19 @@ using namespace std;
 
 string Piece::getPiece()
 {
-	return " ";
+	if (isWhite)
+		return "W";
+	else
+		return "B";
 }
 
-Piece::Piece()
+Piece::Piece() {
+
+}
+
+Piece::Piece(bool color)
 {
+	isWhite = color;
 }
 
 

@@ -5,6 +5,8 @@ class queen :
 {
 public:
 	queen();
+	queen(bool);
 	~queen();
+	string getPiece();
 };
 

@@ -5,8 +5,10 @@ class pawn :
 {
 public:
 	
-
 	pawn();
+	pawn(bool);
 	~pawn();
+	string getPiece();
+
 };
 

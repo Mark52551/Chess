@@ -10,14 +10,15 @@ void Game::welcome()
 
 void Game::display_player_color()
 {
-	cout << "Player 1: White" << endl;
-	cout << "Player 2: Black" << endl;
-	cout << " " << endl;
-
+	//not using anymore
+	//combined with player_turn() function
 }
 
 void Game::player_turn()
 {
+	cout << "Player 1: White" << endl;
+	cout << "Player 2: Black" << endl;
+	cout << " " << endl;
 	cout << "White Player, You will go first!" << endl;
 	cout << " " << endl;
 }
@@ -28,8 +29,9 @@ void Game::main_menu()
 
 		cout << "Menu:" << endl;
 		cout << "S- Start Game" << endl;
-		cout << "M- Move" << endl;
+		//cout << "M- Move" << endl;
 		cout << "E- End Game" << endl;
+		cout << " " << endl;
 		cin >> choice;
 
 		if (choice[0] == 's')
