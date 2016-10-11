@@ -49,6 +49,22 @@ Board::Board()
 	board[5][0] = new bishop(true);
 	board[6][0] = new knight(true);
 	board[7][0] = new rook(true);
+	//Check to see if board set up is right 
+	board[1][0] = new pawn(true);
+	board[1][1] = new pawn(true);
+	board[1][2] = new pawn(true);
+	board[1][3] = new pawn(true);
+	board[1][4] = new pawn(true);
+	board[1][5] = new pawn(true);
+	board[1][6] = new pawn(true);
+	board[1][7] = new pawn(true);
+	//boards from [2][x]
+	//boards from [3][x]
+	//boards from [4][x]
+	//boards from [5][x]
+
+
+
 	//continue this for the whole top row
 
 	//every other row set to null pointer

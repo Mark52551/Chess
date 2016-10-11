@@ -1,5 +1,6 @@
 #include "Game.h"
 #include <iostream>
+#include <string>
 using namespace std;
 
 void Game::welcome()
@@ -39,7 +40,7 @@ void Game::main_menu()
 			system("CLS");
 			cout << "Start";
 			//system("PAUSE");
-			system("CLS");
+			
 		}
 
 		else if (choice[0] == 'm')
@@ -47,14 +48,15 @@ void Game::main_menu()
 			system("CLS");
 			cout << "Move";
 			//system("PAUSE");
-			system("CLS");
+			//system("CLS");
 		}
 		else if (choice[0] == 'e')
 		{
 			system("CLS");
-			cout << "EXIT";
-			//system("PAUSE");
+			cout << "EXIT"<<endl;
+			system("PAUSE");
 			system("CLS");
+			system("PAUSE");
 		}
 		else if (choice[0] > 'e' || choice[0] < 's')//validation
 		{
