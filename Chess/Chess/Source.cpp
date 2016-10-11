@@ -11,6 +11,7 @@ int main()
 	begin.welcome();
 	begin.display_player_color();
 	begin.player_turn();
+	begin.main_menu();
 
 	Board myBoard;
 	myBoard.display_board();

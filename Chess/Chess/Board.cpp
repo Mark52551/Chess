@@ -36,7 +36,7 @@ void Board::display_board()
 
 void Board::display_piece()
 {
-	//display
+	//display pieces
 }
 Board::Board()
 {
