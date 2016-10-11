@@ -40,8 +40,15 @@ void Board::display_piece()
 }
 Board::Board()
 {
+	//this is for the top section which is the white pieces on top
 	board[0][0] = new rook(true);
 	board[1][0] = new knight(true);
+	board[2][0] = new bishop(true);
+	board[3][0] = new queen(true);
+	board[4][0] = new king(true);
+	board[5][0] = new bishop(true);
+	board[6][0] = new knight(true);
+	board[7][0] = new rook(true);
 	//continue this for the whole top row
 
 	//every other row set to null pointer
