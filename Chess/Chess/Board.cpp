@@ -2,13 +2,14 @@
 
 void Board::display_board()
 {
+	cout << "*********************CHESS******************" << endl;
+	cout << "" << endl;
 	for (int col = 0; col < board_size; col++)
 	{
-		cout << " " << "|";
-		cout << " " << board[0][0]->getPiece();
-		cout << " " << "|";
+		cout << " " << "|" << " ";
 	}
-	
+	cout << " " << "|";
+	//what will be used in the function...board[0][0]->getPiece();
 	////Here I will chose how I want to display my board.
 	//for (int row = 0; row < board_size; ++row)
 	//{
