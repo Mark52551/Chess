@@ -31,7 +31,7 @@ void Game::main_menu()
 		cout << "Menu:" << endl;
 		cout << "S- Start Game" << endl;
 		//cout << "M- Move" << endl;
-		cout << "E- End Game" << endl;
+		//cout << "E- End Game" << endl;
 		cout << " " << endl;
 		cin >> choice;
 
@@ -58,7 +58,7 @@ void Game::main_menu()
 			system("CLS");
 			system("PAUSE");
 		}
-		else if (choice[0] > 'e' || choice[0] < 's')//validation
+		else if (choice[0] = 's')//validation
 		{
 			system("CLS");
 			cout << "Invalid Input\n\n";

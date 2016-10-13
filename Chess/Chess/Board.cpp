@@ -7,28 +7,28 @@ void Board::display_board()
 	{
 		for (int col = 0; col < board_size; col++)
 		{
-			cout << "-------";
+			cout << "-----";
 		}
 		cout << "-" << endl;
 		for (int col = 0; col < board_size; col++)
 		{
-			cout << "|" << "      ";
+			cout << "|" << "    ";
 		}
 		cout << "|" << endl;
 		for (int col = 0; col < board_size; col++)
 		{
-			cout << "|" << "      ";
+			cout << "|" << "    ";
 		}
 		cout << "|" << endl;
 		for (int col = 0; col < board_size; col++)
 		{
-			cout << "|" << "      ";
+			cout << "|" << "    ";
 		}
 		cout << "|" << endl;
 	}
 	for (int col = 0; col < board_size; col++)
 	{
-		cout << "-------";
+		cout << "-----";
 	}
 	cout << "-" << endl;
 	
