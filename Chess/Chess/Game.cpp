@@ -34,7 +34,8 @@ void Game::main_menu()
 		//cout << "E- End Game" << endl;
 		cout << " " << endl;
 		cin >> choice;
-
+	
+		
 		if (choice[0] == 's')
 		{
 			system("CLS");
@@ -42,36 +43,14 @@ void Game::main_menu()
 			//system("PAUSE");
 			
 		}
-
-		else if (choice[0] == 'm')
-		{
-			system("CLS");
-			cout << "Move";
-			//system("PAUSE");
-			//system("CLS");
-		}
-		else if (choice[0] == 'e')
-		{
-			system("CLS");
-			cout << "EXIT"<<endl;
-			system("PAUSE");
-			system("CLS");
-			system("PAUSE");
-		}
-		else if (choice[0] = 's')//validation
-		{
-			system("CLS");
-			cout << "Invalid Input\n\n";
-			//system("PAUSE");
-			system("CLS");
-
-		}
+	
 		else
 		{
 			system("CLS");
 			cout << "Invalid Input\n\n";
-			//system("PAUSE");
+			system("PAUSE");
 			system("CLS");
+			
 		}
 		cin.get();
 }

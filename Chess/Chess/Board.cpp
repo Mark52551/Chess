@@ -2,7 +2,7 @@
 
 void Board::display_board()
 {
-	cout << "*********************CHESS******************" << endl;
+	cout << "*********************CHESS**********************" << endl;
 	cout << "" << endl;
 	
 	for (int col=0; col < board_size; col++)
