@@ -8,14 +8,42 @@ void Board::display_board()
 	for (int col=0; col < board_size; col++)
 	{
 		
-		cout << col << " " << "|" << " " << endl;
-		cout << "  " << "|";
+		cout << col << endl;
+		cout << "  ";
 		cout << " " << endl;
 		
 	}
+	/*for (int row = 0; row < board_size; ++row)
+	{
+		for (int col = 0; col < board_size; col++)
+		{
+			cout << "-----";
+		}
+		cout << "-" << endl;
+		for (int col = 0; col < board_size; col++)
+		{
+			cout << "|" << "    ";
+		}
+		cout << "|" << endl;
+		for (int col = 0; col < board_size; col++)
+		{
+			cout << "|" << "    ";
+		}
+		cout << "|" << endl;
+		for (int col = 0; col < board_size; col++)
+		{
+			cout << "|" << "    ";
+		}
+		cout << "|" << endl;
+	}
 	for (int col = 0; col < board_size; col++)
 	{
-		cout << "    " << col;
+		cout << "-----";
+	}*/
+	cout << endl;
+	for (int col = 0; col < board_size; col++)
+	{
+		cout << "     " << col;
 		//cout << "" << "";
 	}
 	
@@ -23,35 +51,8 @@ void Board::display_board()
 
 	//what will be used in the function...board[0][0]->getPiece();
 	////Here I will chose how I want to display my board.
-	//for (int row = 0; row < board_size; ++row)
-	//{
-	//	for (int col = 0; col < board_size; col++)
-	//	{
-	//		cout << "-----";
-	//	}
-	//	cout << "-" << endl;
-	//	for (int col = 0; col < board_size; col++)
-	//	{
-	//		cout << "|" << "    ";
-	//	}
-	//	cout << "|" << endl;
-	//	for (int col = 0; col < board_size; col++)
-	//	{
-	//		cout << "|" << "    ";
-	//	}
-	//	cout << "|" << endl;
-	//	for (int col = 0; col < board_size; col++)
-	//	{
-	//		cout << "|" << "    ";
-	//	}
-	//	cout << "|" << endl;
-	//}
-	//for (int col = 0; col < board_size; col++)
-	//{
-	//	cout << "-----";
-	//}
-	//cout << "-" << endl;
-	//
+	
+	
 }
 
 void Board::display_piece()
@@ -78,7 +79,7 @@ Board::Board()
 	board[1][5] = new pawn(true);
 	board[1][6] = new pawn(true);
 	board[1][7] = new pawn(true);
-	//boards from [2][x]
+	board[2][0] = NULL;
 	//boards from [3][x]
 	//boards from [4][x]
 	//boards from [5][x]

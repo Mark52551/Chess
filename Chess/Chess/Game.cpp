@@ -38,7 +38,7 @@ void Game::main_menu()
 		if (choice[0] == 's')
 		{
 			system("CLS");
-			cout << "Start";
+			cout << "Welcome to Chess!" << endl;
 			//system("PAUSE");
 			
 		}
