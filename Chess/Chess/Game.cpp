@@ -26,17 +26,20 @@ void Game::player_turn()
 
 void Game::main_menu()
 {
-		char choice[2];
+		//char choice[2];
 
 		cout << "Menu:" << endl;
 		cout << "S- Start Game" << endl;
 		//cout << "M- Move" << endl;
 		//cout << "E- End Game" << endl;
 		cout << " " << endl;
-		cin >> choice;
+		string input;
+		cin >> input;
+		string start = "s";
+		string start1 = "S";
 	
 		
-		if (choice[0] == 's')
+		if ( input == start || input == start1)
 		{
 			system("CLS");
 			cout << "Welcome to Chess!" << endl;
@@ -50,8 +53,9 @@ void Game::main_menu()
 			cout << "Invalid Input\n\n";
 			system("PAUSE");
 			system("CLS");
-			
 		}
+		
+
 		cin.get();
 }
 

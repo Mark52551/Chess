@@ -8,7 +8,7 @@ void Board::display_board()
 	for (int col=0; col < board_size; col++)
 	{
 		
-		cout << col << endl;
+		cout << col << "    " << board[0][0]->getPiece() << endl;
 		cout << "  ";
 		cout << " " << endl;
 		
@@ -40,7 +40,7 @@ void Board::display_board()
 	{
 		cout << "-----";
 	}*/
-	cout << endl;
+
 	for (int col = 0; col < board_size; col++)
 	{
 		cout << "     " << col;
