@@ -22,6 +22,7 @@ int main()
 
 	Board myBoard;
 	myBoard.display_board();
+	
 
 
 	//Piece *pieceType = new bishop(true);   
