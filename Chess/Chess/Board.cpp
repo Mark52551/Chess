@@ -16,7 +16,7 @@ void Board::display_board()
 			
 			if (board[row][col] != nullptr)
 			{
-				cout << board[row][col]->getPiece() << "   ";
+				cout <<board[row][col]->getPiece() << "   ";
 			}
 			else
 			{
