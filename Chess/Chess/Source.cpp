@@ -23,6 +23,7 @@ int main()
 	Board myBoard;
 	myBoard.display_board();
 	
+	
 
 
 	//Piece *pieceType = new bishop(true);   
@@ -32,15 +33,6 @@ int main()
 
 	
 	cin.get();
-
-	
-
-
-
-
-
-
-
 	return 0;
 
 }

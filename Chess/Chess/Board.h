@@ -17,7 +17,9 @@ public:
 	/*const int SquareWidth = 4;
 	const int SquareHeight = 3;*/
 	void display_board();
-	void display_piece();
+	//void display_piece();
+	bool pickLocation(int, int);
+	bool move(int, int, int, int);
 	
 	Board();
 

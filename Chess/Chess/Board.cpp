@@ -5,14 +5,35 @@ void Board::display_board()
 	cout << "******************CHESS******************" << endl;
 	cout << "" << endl;
 	
+
+
 	for (int row=0; row < board_size; row++)
 	{
-	
-		cout << row << "    " << endl;
-		cout << "  ";
-		cout << " " << endl; 
-	
+		cout << row << "   ";
+		
+		for (int col = 0; col < board_size; col++)
+		{
+			
+			if (board[row][col] != nullptr)
+			{
+				cout << board[row][col]->getPiece() << "   ";
+			}
+			else
+			{
+				cout << "     ";
+			}
+		}
+		cout << endl << endl;
+	} 
+	//cout << endl;
+	for (int i = 0; i < board_size; i++)
+	{
+		cout << "    " << i;
 	}
+
+	
+	
+
 	/*for (int row = 0; row < board_size; ++row)
 	{
 		for (int col = 0; col < board_size; col++)
@@ -41,11 +62,7 @@ void Board::display_board()
 		cout << "-----";
 	}*/
 
-	for (int col = 0; col < board_size; col++)
-	{
-		cout << "    " << col;
-		cout << "" << "";
-	}
+	
 	
 
 
@@ -56,10 +73,9 @@ void Board::display_board()
 	
 }
 
-void Board::display_piece()
-{	
-	cout << board[0][0]->getPiece();
-
+//void Board::display_piece()
+//{	
+	//board[0][0]->getPiece();
 	//board[0][0]->getPiece();
 	//board[1][0]->getPiece();
 	//board[2][0]->getPiece();
@@ -68,19 +84,19 @@ void Board::display_piece()
 	//board[5][0]->getPiece();
 	//board[6][0]->getPiece();
 	//board[7][0]->getPiece();
-}
+//}
+
 Board::Board()
 {
-	//this is for the top section which is the white pieces on top
 	board[0][0] = new rook(true);
-	board[1][0] = new knight(true);
-	board[2][0] = new bishop(true);
-	board[3][0] = new queen(true);
-	board[4][0] = new king(true);
-	board[5][0] = new bishop(true);
-	board[6][0] = new knight(true);
-	board[7][0] = new rook(true);
-	//Check to see if board set up is right 
+	board[0][1] = new knight(true);
+	board[0][2] = new bishop(true);
+	board[0][3] = new queen(true);
+	board[0][4] = new king(true);
+	board[0][5] = new bishop(true);
+	board[0][6] = new knight(true);
+	board[0][7] = new rook(true);
+
 	board[1][0] = new pawn(true);
 	board[1][1] = new pawn(true);
 	board[1][2] = new pawn(true);
@@ -89,21 +105,58 @@ Board::Board()
 	board[1][5] = new pawn(true);
 	board[1][6] = new pawn(true);
 	board[1][7] = new pawn(true);
-	board[2][0] = NULL;
-	//boards from [3][x]
-	//boards from [4][x]
-	//boards from [5][x]
 
+	for (int i = 2; i < 6; i++)
+	{
+		for (int j = 0; j < board_size; j++)
+		{
+			board[i][j] = nullptr;
+		}
+	}
 
+	board[7][0] = new rook(false);
+	board[7][1] = new knight(false);
+	board[7][2] = new bishop(false);
+	board[7][3] = new queen(false);
+	board[7][4] = new king(false);
+	board[7][5] = new bishop(false);
+	board[7][6] = new knight(false);
+	board[7][7] = new rook(false);
 
-	//continue this for the whole top row
-
-	//every other row set to null pointer
-
-	//continue for bottom row
+	board[6][0] = new pawn(false);
+	board[6][1] = new pawn(false);
+	board[6][2] = new pawn(false);
+	board[6][3] = new pawn(false);
+	board[6][4] = new pawn(false);
+	board[6][5] = new pawn(false);
+	board[6][6] = new pawn(false);
+	board[6][7] = new pawn(false);
 }
 
+bool Board::pickLocation(int row, int col)
+{
+	if (row < 0 || row > 7 || col <0 || col >7)
+	{
+		return false;
+	}
+	else
+	{
+		return true;
+	}
 
+}
+
+bool Board::move(int row, int col, int srcRow, int srcCol)
+{
+	if (board[row][col] != nullptr)
+	{
+		return false;
+	}
+	board[row][col] = (board[srcRow][srcCol]);
+	board[srcRow][srcCol] = nullptr;
+	return true;
+
+}
 Board::~Board()
 {
 }
