@@ -1,7 +1,6 @@
 #include "queen.h"
 
 
-
 queen::queen(bool color) : Piece(color)
 {
 	

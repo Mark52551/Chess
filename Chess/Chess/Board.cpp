@@ -2,16 +2,16 @@
 
 void Board::display_board()
 {
-	cout << "*********************CHESS**********************" << endl;
+	cout << "******************CHESS******************" << endl;
 	cout << "" << endl;
 	
-	for (int col=0; col < board_size; col++)
+	for (int row=0; row < board_size; row++)
 	{
-		
-		cout << col << "    " << endl;
+	
+		cout << row << "    " << endl;
 		cout << "  ";
-		cout << " " << endl;
-		
+		cout << " " << endl; 
+	
 	}
 	/*for (int row = 0; row < board_size; ++row)
 	{
@@ -43,8 +43,8 @@ void Board::display_board()
 
 	for (int col = 0; col < board_size; col++)
 	{
-		cout << "     " << col;
-		//cout << "" << "";
+		cout << "    " << col;
+		cout << "" << "";
 	}
 	
 

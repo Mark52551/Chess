@@ -7,7 +7,6 @@
 
 
 
-
 pawn::pawn(bool color) : Piece(color)
 {
 

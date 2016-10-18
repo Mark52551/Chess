@@ -1,5 +1,7 @@
 #include "bishop.h"
 
+
+
 bishop::bishop(bool color) : Piece(color)
 {
 	
@@ -19,3 +21,4 @@ string bishop::getPiece()
 {
 	return Piece::getPiece() + "B";
 }
+

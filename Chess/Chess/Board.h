@@ -14,8 +14,8 @@ const int board_size = 8;
 class Board
 {
 public:
-	const int SquareWidth = 4;
-	const int SquareHeight = 3;
+	/*const int SquareWidth = 4;
+	const int SquareHeight = 3;*/
 	void display_board();
 	void display_piece();
 	

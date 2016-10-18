@@ -6,6 +6,7 @@ class knight :
 	public Piece
 {
 public:
+
 	knight();
 	knight(bool);
 	~knight();

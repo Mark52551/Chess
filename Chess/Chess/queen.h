@@ -4,6 +4,7 @@ class queen :
 	public Piece
 {
 public:
+
 	queen();
 	queen(bool);
 	~queen();

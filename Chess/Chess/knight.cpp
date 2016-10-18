@@ -1,7 +1,6 @@
 #include "knight.h"
 
 
-
 knight::knight(bool color) : Piece(color)
 {
 	

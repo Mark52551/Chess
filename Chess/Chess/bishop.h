@@ -7,6 +7,7 @@ class bishop :
 	public Piece
 {
 public:
+	
 	bishop();
 	bishop(bool);
 	~bishop();
