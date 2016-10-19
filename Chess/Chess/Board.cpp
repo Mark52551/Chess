@@ -31,7 +31,7 @@ void Board::display_board()
 		cout << "    " << i;
 	}
 
-	
+	cout << endl;
 	
 
 	/*for (int row = 0; row < board_size; ++row)
@@ -60,8 +60,8 @@ void Board::display_board()
 	for (int col = 0; col < board_size; col++)
 	{
 		cout << "-----";
-	}*/
-
+	}
+*/
 	
 	
 
