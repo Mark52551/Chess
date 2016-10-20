@@ -152,13 +152,14 @@ bool Board::pickLocation(int row, int col)
 
 bool Board::move(int row, int col, int srcRow, int srcCol)
 {
-	if (board[row][col] != nullptr)
+	if (board[srcRow][srcCol] == nullptr)
 	{
-		return false;
+		board[srcRow][srcCol] = (board[row][col]);
+		board[row][col] = nullptr;
+		return true;
 	}
-	board[row][col] = (board[srcRow][srcCol]);
-	board[srcRow][srcCol] = nullptr;
-	return true;
+	return false;
+	
 
 }
 Board::~Board()

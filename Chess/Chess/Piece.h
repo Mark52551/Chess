@@ -13,7 +13,7 @@ public:
 	//the functions that will be used to get the piece and move
 	//this will get the piece 
 	virtual string Piece::getPiece();
-
+	//virtual string Piece::move();
 
 
 	
