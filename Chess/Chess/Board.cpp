@@ -9,26 +9,30 @@ void Board::display_board()
 
 	for (int row=0; row < board_size; row++)
 	{
-		cout << row << "   ";
+		cout << row << "  |";
 		
 		for (int col = 0; col < board_size; col++)
 		{
 			
 			if (board[row][col] != nullptr)
 			{
-				cout <<board[row][col]->getPiece() << "   ";
+				cout << " " << board[row][col]->getPiece()<< " |";
 			}
 			else
 			{
-				cout << "     ";
+				for (int i = 2; i < 3; i++)
+					{
+						cout << "    |";
+					}
 			}
 		}
 		cout << endl << endl;
 	} 
 	//cout << endl;
+	cout << "  ";
 	for (int i = 0; i < board_size; i++)
 	{
-		cout << "    " << i;
+		cout << "    " <<i;
 	}
 
 	cout << endl;
