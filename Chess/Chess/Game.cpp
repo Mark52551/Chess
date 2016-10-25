@@ -37,7 +37,7 @@ void Game::main_menu()
 	{
 		cout << "Menu:" << endl;
 		cout << "S- Start Game" << endl;
-		cout << "M- Move" << endl;
+		//cout << "M- Move" << endl;
 		cout << "E- End Game" << endl;
 		cout << " " << endl;
 		
@@ -49,6 +49,10 @@ void Game::main_menu()
 			cout << "Welcome to Chess!" << endl;
 			//system("PAUSE");
 			
+		}
+		if (input != start || input != start1 || input != endgame || input != endgame1)
+		{
+			cout << "Error: Invalid input...(Valid: S/s, E/e)";
 		}
 		else if (input == endgame || input == endgame1)
 		{

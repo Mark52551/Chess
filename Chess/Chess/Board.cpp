@@ -77,18 +77,7 @@ void Board::display_board()
 	
 }
 
-//void Board::display_piece()
-//{	
-	//board[0][0]->getPiece();
-	//board[0][0]->getPiece();
-	//board[1][0]->getPiece();
-	//board[2][0]->getPiece();
-	//board[3][0]->getPiece();
-	//board[4][0]->getPiece();
-	//board[5][0]->getPiece();
-	//board[6][0]->getPiece();
-	//board[7][0]->getPiece();
-//}
+
 
 Board::Board()
 {
@@ -139,32 +128,24 @@ Board::Board()
 
 bool Board::pickLocation(int srcCol, int srcRow, int col, int row, bool moveturn)
 {
-	if (row < 0 || row > 7 || col <0 || col >7 || srcCol < 0 || srcCol > 7 || srcRow < 0 || srcRow > 7)
+	do
 	{
-		return false;
-	}
-	if (board[srcCol][srcRow] == nullptr)
-		return false;
-	if (board[srcCol][srcRow]->getColor() != moveturn)
-		return false;
-	if (board[col][row] != nullptr)
-		if (board[col][row]->getColor() == board[srcCol][srcRow]->getColor())
+		if (row < 0 || row > 7 || col < 0 || col >7 || srcCol < 0 || srcCol > 7 || srcRow < 0 || srcRow > 7)
+		{
 			return false;
-
-
-	//else
-	//{
-	//	cout << "Move to (x,y) :";
-	//	return true;
-	//}
-
+		}
+		if (board[srcCol][srcRow] == nullptr)
+			return false;
+		if (board[srcCol][srcRow]->getColor() != moveturn)
+			return false;
+		if (board[col][row] != nullptr)
+			if (board[col][row]->getColor() == board[srcCol][srcRow]->getColor())
+				return false;
+	} while (true);
 }
 
 bool Board::move(int srcCol, int srcRow, int col, int row)
 {
-	
-	
-	
 
 	if (board[row][col] == nullptr)
 	{
@@ -174,9 +155,9 @@ bool Board::move(int srcCol, int srcRow, int col, int row)
 	}
 
 	return false;
-	
 
 }
+
 Board::~Board()
 {
 }

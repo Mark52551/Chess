@@ -30,11 +30,13 @@ int main()
 	
 
 	bool result;
+
 	do
 	{
-		myBoard.display_board();
+		//myBoard.display_board();
 		do
 		{
+			myBoard.display_board();
 			string move = "m";
 			string move1 = "M";
 			string mov;
@@ -45,7 +47,6 @@ int main()
 			if (mov != move && mov != move1)
 				exit(0);
 			cout << "Choose piece (col) :";
-		
 			cin >> srcCol;
 			cout << "Choose piece (row) :";
 			cin >> srcRow;
@@ -57,7 +58,7 @@ int main()
 			if (!result)
 				cout << "Error" << endl;
 		} while (!result);
-		myBoard.move(srcCol, srcRow, row, col);
+		myBoard.move(srcCol, srcRow, col, row);
 		if (whiteturn)
 			whiteturn = false;
 		else
