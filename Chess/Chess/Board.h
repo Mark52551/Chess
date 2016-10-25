@@ -18,7 +18,7 @@ public:
 	const int SquareHeight = 3;*/
 	void display_board();
 	//void display_piece();
-	bool pickLocation(int, int);
+	bool pickLocation(int, int, int, int, bool);
 	bool move(int, int, int, int);
 	
 	Board();

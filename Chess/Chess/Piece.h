@@ -12,9 +12,9 @@ protected:
 public:
 	//the functions that will be used to get the piece and move
 	//this will get the piece 
-	virtual string Piece::getPiece();
+	virtual string getPiece();
 	//virtual string Piece::move();
-
+	bool getColor();
 
 	
 	Piece();

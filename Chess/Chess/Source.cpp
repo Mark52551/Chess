@@ -17,6 +17,7 @@ int main()
 	int srcCol;
 	int row;
 	int col;
+	bool whiteturn = true;
 	
 	Game begin;
 	begin.welcome();
@@ -26,15 +27,45 @@ int main()
 	
 
 	Board myBoard;
-	myBoard.display_board();
-	/*bool result;
+	
+
+	bool result;
 	do
 	{
-		cin >> srcCol >> srcRow >> row >> col;
-		result = myBoard.move(srcCol, srcRow, row, col);
-	} while (!result);*/
+		myBoard.display_board();
+		do
+		{
+			string move = "m";
+			string move1 = "M";
+			string mov;
+	
+			cout << "E- Exit\n" "M- Move" << endl;
+		
+			cin >> mov;
+			if (mov != move && mov != move1)
+				exit(0);
+			cout << "Choose piece (col) :";
+		
+			cin >> srcCol;
+			cout << "Choose piece (row) :";
+			cin >> srcRow;
+			cout << "Choose target square (col) :";
+			cin >> col;
+			cout << "Choose target square (row) :";
+			cin >> row;
+			result = myBoard.pickLocation(srcCol, srcRow, col, row, whiteturn);
+			if (!result)
+				cout << "Error" << endl;
+		} while (!result);
+		myBoard.move(srcCol, srcRow, row, col);
+		if (whiteturn)
+			whiteturn = false;
+		else
+			whiteturn = true;
 
-	//myBoard.move();
+		
+	} while (true);
+	
 
 	
 

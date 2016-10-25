@@ -11,6 +11,10 @@ string Piece::getPiece()
 		return "B";
 }
 
+bool Piece::getColor()
+{
+	return isWhite;
+}
 Piece::Piece() {
 
 }
