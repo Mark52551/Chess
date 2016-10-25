@@ -152,12 +152,21 @@ bool Board::pickLocation(int row, int col)
 
 bool Board::move(int row, int col, int srcRow, int srcCol)
 {
-	if (board[srcRow][srcCol] == nullptr)
+	string move = "m";
+	string move1 = "M";
+	string mov;
+	string piece;
+	
+	cout << "Chose piece: ";//continue from this line with help from tutor!
+
+
+	if (board[row][col] == nullptr)
 	{
-		board[srcRow][srcCol] = (board[row][col]);
-		board[row][col] = nullptr;
+		board[row][col] = (board[srcRow][srcCol]);
+		board[srcRow][srcCol] = nullptr;
 		return true;
 	}
+
 	return false;
 	
 

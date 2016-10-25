@@ -13,6 +13,11 @@ using namespace std;
 
 int main()
 {
+	int srcRow;
+	int srcCol;
+	int row;
+	int col;
+	
 	Game begin;
 	begin.welcome();
 	begin.main_menu();
@@ -22,7 +27,15 @@ int main()
 
 	Board myBoard;
 	myBoard.display_board();
-	
+	bool result;
+	do
+	{
+		cin >> srcCol >> srcRow >> row >> col;
+		result = myBoard.move(srcCol, srcRow, row, col);
+	} while (!result);
+
+	//myBoard.move();
+
 	
 
 
