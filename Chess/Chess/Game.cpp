@@ -6,6 +6,9 @@ using namespace std;
 void Game::welcome()
 {
 	cout << "Welcome to Chess!\n" << endl;
+	cout << "Player 1: White" << endl;
+	cout << "Player 2: Black" << endl;
+	cout << " " << endl;
 	
 }
 
@@ -17,8 +20,6 @@ void Game::display_player_color()
 
 void Game::player_turn()
 {
-	cout << "Player 1: White" << endl;
-	cout << "Player 2: Black" << endl;
 	cout << " " << endl;
 	cout << "White Player, You will go first!" << endl;
 	cout << " " << endl;
@@ -26,7 +27,6 @@ void Game::player_turn()
 
 void Game::main_menu()
 {
-		//char choice[2];
 	string start = "s";
 	string start1 = "S";
 	string endgame = "e";
@@ -46,7 +46,7 @@ void Game::main_menu()
 		if ( input == start || input == start1)
 		{
 			system("CLS");
-			cout << endl;
+			cout << "Starting Game..." <<endl;
 			//system("PAUSE");
 			
 		}
@@ -56,11 +56,8 @@ void Game::main_menu()
 		}
 		if (input != start || input != start1 || input != endgame || input != endgame1)
 		{
-			cout << endl;
-			cout << "Error";
+			cout << "" << endl;
 		}
-		
-	
 		else
 		{
 			system("CLS");
@@ -72,6 +69,7 @@ void Game::main_menu()
 		cin.get();
 	}
 	while (input != start && input != start1 && input != endgame && input != endgame1);
+
 }
 
 Game::Game()

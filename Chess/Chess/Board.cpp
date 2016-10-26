@@ -2,11 +2,8 @@
 
 void Board::display_board()
 {
-	cout << "Welcome to Chess!";
-	cout << "******************CHESS******************" << endl;
+	cout << "   ******************CHESS******************" << endl;
 	cout << "" << endl;
-	
-
 
 	for (int row=0; row < board_size; row++)
 	{
@@ -17,19 +14,19 @@ void Board::display_board()
 			
 			if (board[col][row] != nullptr)
 			{
-				cout << " " << board[col][row]->getPiece()<< " |";
+				cout << ":" << board[col][row]->getPiece()<< ":|";
 			}
 			else
 			{
 				for (int i = 2; i < 3; i++)
 					{
-						cout << "    |";
+					cout << ":  :|";
 					}
 			}
 		}
 		cout << endl << endl;
 	} 
-	//cout << endl;
+
 	cout << "  ";
 	for (int i = 0; i < board_size; i++)
 	{
@@ -37,48 +34,7 @@ void Board::display_board()
 	}
 
 	cout << endl;
-	
-
-	/*for (int row = 0; row < board_size; ++row)
-	{
-		for (int col = 0; col < board_size; col++)
-		{
-			cout << "-----";
-		}
-		cout << "-" << endl;
-		for (int col = 0; col < board_size; col++)
-		{
-			cout << "|" << "    ";
-		}
-		cout << "|" << endl;
-		for (int col = 0; col < board_size; col++)
-		{
-			cout << "|" << "    ";
-		}
-		cout << "|" << endl;
-		for (int col = 0; col < board_size; col++)
-		{
-			cout << "|" << "    ";
-		}
-		cout << "|" << endl;
-	}
-	for (int col = 0; col < board_size; col++)
-	{
-		cout << "-----";
-	}
-*/
-	
-	
-
-
-
-	//what will be used in the function...board[0][0]->getPiece();
-	////Here I will chose how I want to display my board.
-	
-	
 }
-
-
 
 Board::Board()
 {
@@ -129,8 +85,6 @@ Board::Board()
 
 bool Board::pickLocation(int srcCol, int srcRow, int col, int row, bool moveturn)
 {
-	
-
 		if (row < 0 || row > 7 || col < 0 || col >7 || srcCol < 0 || srcCol > 7 || srcRow < 0 || srcRow > 7)
 		{
 			return false;
@@ -154,9 +108,7 @@ bool Board::move(int srcCol, int srcRow, int col, int row)
 		board[srcCol][srcRow] = nullptr;
 		return true;
 	}
-
 	return false;
-
 }
 
 Board::~Board()

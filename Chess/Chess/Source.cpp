@@ -23,14 +23,10 @@ int main()
 	begin.welcome();
 	begin.main_menu();
 	//begin.display_player_color();
-	begin.player_turn();
+	//begin.player_turn();
 	
-
 	Board myBoard;
-	
-
 	bool result;
-
 	do
 	{
 		myBoard.display_board();
@@ -64,19 +60,7 @@ int main()
 			whiteturn = false;
 		else
 			whiteturn = true;
-
-		
 	} while (true);
-	
-
-	
-
-
-	//Piece *pieceType = new bishop(true);   
-	//cout << pieceType->getPiece();	
-
-
-
 	
 	cin.get();
 	return 0;
