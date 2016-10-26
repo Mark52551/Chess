@@ -33,10 +33,10 @@ int main()
 
 	do
 	{
-		//myBoard.display_board();
+		myBoard.display_board();
 		do
 		{
-			myBoard.display_board();
+		
 			string move = "m";
 			string move1 = "M";
 			string mov;
@@ -57,7 +57,7 @@ int main()
 			result = myBoard.pickLocation(srcCol, srcRow, col, row, whiteturn);
 			if (!result)
 				cout << "Error" << endl;
-		} while (!result);
+		}while (!result);
 		myBoard.move(srcCol, srcRow, col, row);
 		if (whiteturn)
 			whiteturn = false;
