@@ -128,8 +128,8 @@ Board::Board()
 
 bool Board::pickLocation(int srcCol, int srcRow, int col, int row, bool moveturn)
 {
-	do
-	{
+	
+
 		if (row < 0 || row > 7 || col < 0 || col >7 || srcCol < 0 || srcCol > 7 || srcRow < 0 || srcRow > 7)
 		{
 			return false;
@@ -141,16 +141,16 @@ bool Board::pickLocation(int srcCol, int srcRow, int col, int row, bool moveturn
 		if (board[col][row] != nullptr)
 			if (board[col][row]->getColor() == board[srcCol][srcRow]->getColor())
 				return false;
-	} while (true);
+		return true;
 }
 
 bool Board::move(int srcCol, int srcRow, int col, int row)
 {
 
-	if (board[row][col] == nullptr)
+	if (board[col][row] == nullptr)
 	{
-		board[row][col] = (board[srcRow][srcCol]);
-		board[srcRow][srcCol] = nullptr;
+		board[col][row] = (board[srcCol][srcRow]);
+		board[srcCol][srcRow] = nullptr;
 		return true;
 	}
 
