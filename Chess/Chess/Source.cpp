@@ -55,8 +55,9 @@ int main()
 			cout << "Choose target square (row) :";
 			cin >> row;
 			result = myBoard.pickLocation(srcCol, srcRow, col, row, whiteturn);
+			cout << endl;
 			if (!result)
-				cout << "Error" << endl;
+				cout << "Error, That is an invalid move!" << endl;
 		}while (!result);
 		myBoard.move(srcCol, srcRow, col, row);
 		if (whiteturn)

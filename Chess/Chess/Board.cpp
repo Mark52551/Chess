@@ -2,6 +2,7 @@
 
 void Board::display_board()
 {
+	cout << "Welcome to Chess!";
 	cout << "******************CHESS******************" << endl;
 	cout << "" << endl;
 	
