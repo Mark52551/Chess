@@ -2,32 +2,32 @@
 
 void Board::display_board()
 {
-	cout << "   ******************CHESS******************" << endl;
+	cout << "       ******************CHESS******************" << endl;
 	cout << "" << endl;
 
 	for (int row=0; row < board_size; row++)
 	{
-		cout << row << "  |";
+		cout <<"    " << row << "  |";
 		
 		for (int col = 0; col < board_size; col++)
 		{
 			
 			if (board[col][row] != nullptr)
 			{
-				cout << ":" << board[col][row]->getPiece()<< ":|";
+				cout << "(" << board[col][row]->getPiece()<< ")|";
 			}
 			else
 			{
 				for (int i = 2; i < 3; i++)
 					{
-					cout << ":  :|";
+					cout << "(  )|";
 					}
 			}
 		}
 		cout << endl << endl;
 	} 
 
-	cout << "  ";
+	cout << "     ";
 	for (int i = 0; i < board_size; i++)
 	{
 		cout << "    " <<i;
