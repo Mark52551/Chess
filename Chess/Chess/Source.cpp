@@ -32,16 +32,16 @@ int main()
 		myBoard.display_board();
 		do
 		{
-		
+	
 			string move = "m";
 			string move1 = "M";
 			string mov;
-	
+			
 			cout << "E- Exit\n" "M- Move" << endl;
-		
+
 			cin >> mov;
 			if (mov != move && mov != move1)
-				exit(0);
+				cout << "Invalid input!" << endl;
 			cout << "Choose piece (col) :";
 			cin >> srcCol;
 			cout << "Choose piece (row) :";
@@ -54,6 +54,7 @@ int main()
 			cout << endl;
 			if (!result)
 				cout << "Error, That is an invalid move!" << endl;
+				cout << "Chose a correct square and piece color." << endl;
 		}while (!result);
 		myBoard.move(srcCol, srcRow, col, row);
 		if (whiteturn)

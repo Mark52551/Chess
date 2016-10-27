@@ -15,7 +15,6 @@ public:
 	virtual string getPiece();
 	//virtual string Piece::move();
 	bool getColor();
-
 	
 	Piece();
 	Piece(bool);

@@ -85,7 +85,7 @@ Board::Board()
 
 bool Board::pickLocation(int srcCol, int srcRow, int col, int row, bool moveturn)
 {
-		if (row < 0 || row > 7 || col < 0 || col >7 || srcCol < 0 || srcCol > 7 || srcRow < 0 || srcRow > 7)
+		if (row < 0 || row > 7 || col < 0 || col > 7 || srcCol < 0 || srcCol > 7 || srcRow < 0 || srcRow > 7)
 		{
 			return false;
 		}
