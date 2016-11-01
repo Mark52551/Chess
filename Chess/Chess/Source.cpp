@@ -54,7 +54,7 @@ int main()
 			cout << endl;
 			if (!result)
 				cout << "Error, That is an invalid move!" << endl;
-				cout << "Chose a correct square and piece color." << endl;
+				cout << "Choose a correct square and piece color." << endl;
 		}while (!result);
 		myBoard.move(srcCol, srcRow, col, row);
 		if (whiteturn)
