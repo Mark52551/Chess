@@ -30,11 +30,14 @@ int main()
 	do
 	{
 		myBoard.display_board();
+		
 		do
 		{
 	
 			string move = "m";
 			string move1 = "M";
+			string exit1 = "e";
+			string exit2 = "E";
 			string mov;
 			
 			cout << "E- Exit\n" "M- Move" << endl;
@@ -42,6 +45,8 @@ int main()
 			cin >> mov;
 			if (mov != move && mov != move1)
 				cout << "Invalid input!" << endl;
+			if (mov == exit1 || mov == exit2)
+				exit(0);
 			cout << "Choose piece (col) :";
 			cin >> srcCol;
 			cout << "Choose piece (row) :";
@@ -53,10 +58,10 @@ int main()
 			result = myBoard.pickLocation(srcCol, srcRow, col, row, whiteturn);
 			cout << endl;
 			if (!result)
-				cout << "Error, That is an invalid move!" << endl;
-				cout << "Choose a correct square and piece color." << endl;
+				cout << "Error, That is an invalid move!...Choose a correct square and piece color." << endl;
 		}while (!result);
 		myBoard.move(srcCol, srcRow, col, row);
+		cout << "Piece moved to: " << col << "," << row << endl;
 		if (whiteturn)
 			whiteturn = false;
 		else

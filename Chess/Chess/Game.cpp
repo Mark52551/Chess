@@ -47,6 +47,9 @@ void Game::main_menu()
 		{
 			system("CLS");
 			cout << "Starting Game..." <<endl;
+			cout << " " << endl;
+			cout << "White Player, You will go first!" << endl;
+			cout << " " << endl;
 			//system("PAUSE");
 			
 		}
