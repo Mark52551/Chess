@@ -1,9 +1,12 @@
 #include "Board.h"
 
+
 void Board::display_board()
 {
+	numDead = 0;
 	cout << "       ******************CHESS******************" << endl;
 	cout << "" << endl;
+
 
 	for (int row=0; row < board_size; row++)
 	{
@@ -96,19 +99,38 @@ bool Board::pickLocation(int srcCol, int srcRow, int col, int row, bool moveturn
 		if (board[col][row] != nullptr)
 			if (board[col][row]->getColor() == board[srcCol][srcRow]->getColor())
 				return false;
+
 		return true;
 }
 
 bool Board::move(int srcCol, int srcRow, int col, int row)
 {
+	bool capture = false;
 
-	if (board[col][row] == nullptr)
+	/*if (board[col][row] == nullptr)
 	{
-		board[col][row] = (board[srcCol][srcRow]);
-		board[srcCol][srcRow] = nullptr;
 		return true;
+	}*/
+	if (board[col][row] != nullptr)
+	{
+		dead[numDead] = board[col][row];
+		board[col][row] = nullptr;
+		numDead++;
+		capture = true;
 	}
-	return false;
+	board[col][row] = (board[srcCol][srcRow]);
+	board[srcCol][srcRow] = nullptr;
+	
+	return capture;
+}
+
+void Board::moveUndo()
+{
+	bool result;
+	storedMove boardUndo;
+	result = turnHistory.pop(boardUndo);
+	if (!result)
+		return;
 }
 
 Board::~Board()

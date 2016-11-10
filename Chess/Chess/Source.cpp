@@ -38,6 +38,8 @@ int main()
 			string move1 = "M";
 			string exit1 = "e";
 			string exit2 = "E";
+			string undo1 = "u";
+			string undo2 = "U";
 			string mov;
 			
 			cout << "E- Exit\n" "M- Move" << endl;
