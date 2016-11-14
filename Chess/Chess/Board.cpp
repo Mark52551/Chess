@@ -103,9 +103,9 @@ bool Board::pickLocation(int srcCol, int srcRow, int col, int row, bool moveturn
 		return true;
 }
 
-bool Board::move(int srcCol, int srcRow, int col, int row)
+storedMove* Board::move(int srcCol, int srcRow, int col, int row)
 {
-	bool capture = false;
+	storedMove* storemoved = new storedMove();
 
 	/*if (board[col][row] == nullptr)
 	{
@@ -113,15 +113,20 @@ bool Board::move(int srcCol, int srcRow, int col, int row)
 	}*/
 	if (board[col][row] != nullptr)
 	{
-		dead[numDead] = board[col][row];
-		board[col][row] = nullptr;
-		numDead++;
-		capture = true;
+		dead[numDead++] = board[col][row];
+		storemoved->capturedPiece = board[col][row];
+		//board[col][row] = nullptr;
+		/*numDead++;*/
 	}
+	
 	board[col][row] = (board[srcCol][srcRow]);
 	board[srcCol][srcRow] = nullptr;
-	
-	return capture;
+	storemoved->srcCol = srcCol;
+	storemoved->srcRow = srcRow;
+	storemoved->col = col;
+	storemoved->row = row;
+	storemoved->pieceMoved = board[col][row];
+	return storemoved;
 }
 
 void Board::moveUndo()

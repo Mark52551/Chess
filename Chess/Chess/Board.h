@@ -22,7 +22,7 @@ public:
 	void moveUndo();
 	//void display_piece();
 	bool pickLocation(int, int, int, int, bool);
-	bool move(int, int, int, int);
+	storedMove* move(int, int, int, int);
 	
 	Board();
 

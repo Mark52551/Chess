@@ -34,7 +34,7 @@ int main()
 		
 		do
 		{
-	
+
 			string move = "m";
 			string move1 = "M";
 			string exit1 = "e";
@@ -42,14 +42,21 @@ int main()
 			string undo1 = "u";
 			string undo2 = "U";
 			string mov;
-			
-			cout << "E- Exit\n" "M- Move" << endl;
+
+			cout << "E- Exit\n" "M- Move" "U- Undo" << endl;
 
 			cin >> mov;
 			if (mov != move && mov != move1)
 				cout << "Invalid input!" << endl;
 			if (mov == exit1 || mov == exit2)
 				exit(0);
+			if (mov == undo1 || mov == undo2)
+			{
+				storedMove* correct;
+				//bool success = stack.pop(correct);
+				//get pieces and board coordinates from correct and put pieces back where they were
+			}
+
 			cout << "Choose piece (col) :";
 			cin >> srcCol;
 			cout << "Choose piece (row) :";
@@ -63,7 +70,8 @@ int main()
 			if (!result)
 				cout << "Error, That is an invalid move!...Choose a correct square and piece color." << endl;
 		}while (!result);
-		myBoard.move(srcCol, srcRow, col, row);
+		storedMove * smove = myBoard.move(srcCol, srcRow, col, row);
+		stack.push(smove);
 		cout << "Piece moved to: " << col << "," << row << endl;
 		if (whiteturn)
 			whiteturn = false;

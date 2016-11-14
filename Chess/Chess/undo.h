@@ -6,7 +6,7 @@ class undo
 
 public:
 
-	void push(int col,int row,int srcCol, int srcRow, Piece* pieceMoved, Piece* capturedPiece);
+	void push(storedMove*);
 	bool pop(storedMove&);
 
 
