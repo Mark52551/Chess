@@ -24,6 +24,7 @@ int main()
 	begin.main_menu();
 	//begin.display_player_color();
 	//begin.player_turn();
+	undo stack;
 	
 	Board myBoard;
 	bool result;
