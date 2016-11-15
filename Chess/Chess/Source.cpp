@@ -52,7 +52,11 @@ int main()
 			if (mov == undo1 || mov == undo2)
 			{
 				storedMove* correct;
-				//bool success = stack.pop(correct);
+				bool success = stack.pop(correct);
+				correct->col;
+				correct->row;
+				correct->srcCol;
+				correct->srcRow;
 				//get pieces and board coordinates from correct and put pieces back where they were
 			}
 

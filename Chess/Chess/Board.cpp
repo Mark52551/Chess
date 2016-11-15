@@ -132,7 +132,7 @@ storedMove* Board::move(int srcCol, int srcRow, int col, int row)
 void Board::moveUndo()
 {
 	bool result;
-	storedMove boardUndo;
+	storedMove* boardUndo;
 	result = turnHistory.pop(boardUndo);
 	if (!result)
 		return;
