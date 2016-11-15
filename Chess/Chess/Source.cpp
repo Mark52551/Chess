@@ -23,13 +23,13 @@ int main()
 	begin.welcome();
 	begin.main_menu();
 
-	undo stack;
 	
 	Board myBoard;
 	bool result;
+	myBoard.display_board();
 	do
 	{
-		myBoard.display_board();
+		
 		
 		do
 		{
@@ -42,40 +42,45 @@ int main()
 			string undo2 = "U";
 			string mov;
 
-			cout << "E- Exit\n" "M- Move" "U- Undo" << endl;
+			cout << "E- Exit\n" "M- Move\n" "U- Undo" << endl;
 
 			cin >> mov;
-			if (mov != move && mov != move1)
-				cout << "Invalid input!" << endl;
+
+			
 			if (mov == exit1 || mov == exit2)
 				exit(0);
-			if (mov == undo1 || mov == undo2)
+			else if (mov == undo1 || mov == undo2)
 			{
-				storedMove* correct;
-				bool success = stack.pop(correct);
-				correct->col;
-				correct->row;
-				correct->srcCol;
-				correct->srcRow;
-				//get pieces and board coordinates from correct and put pieces back where they were
-			}
+				myBoard.moveUndo();
+				result = true;
+			}else if (mov == move || mov == move1) 
+			{			
+				cout << "Choose piece (col) :";
+				cin >> srcCol;
+				cout << "Choose piece (row) :";
+				cin >> srcRow;
+				cout << "Choose target square (col) :";
+				cin >> col;
+				cout << "Choose target square (row) :";
+				cin >> row;
 
-			cout << "Choose piece (col) :";
-			cin >> srcCol;
-			cout << "Choose piece (row) :";
-			cin >> srcRow;
-			cout << "Choose target square (col) :";
-			cin >> col;
-			cout << "Choose target square (row) :";
-			cin >> row;
-			
-			result = myBoard.pickLocation(srcCol, srcRow, col, row, whiteturn);
-			cout << endl;
+				result = myBoard.pickLocation(srcCol, srcRow, col, row, whiteturn);
+				cout << endl;
+			}
+			else
+			{
+				cout << "Invalid input!" << endl;
+			}
 			if (!result)
 				cout << "Error, That is an invalid move!...Choose a correct square and piece color." << endl;
+			else {
+				if (mov == move || mov == move1) {
+					myBoard.move(srcCol, srcRow, col, row);
+				}
+				myBoard.display_board();
+			}
 		}while (!result);
-		storedMove * smove = myBoard.move(srcCol, srcRow, col, row);
-		stack.push(smove);
+		//stack.push(smove);
 		cout << "Piece moved to: " << col << "," << row << endl;
 		if (whiteturn)
 			whiteturn = false;

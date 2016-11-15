@@ -22,7 +22,7 @@ public:
 	void moveUndo();
 	//void display_piece();
 	bool pickLocation(int, int, int, int, bool);
-	storedMove* move(int, int, int, int);
+	void move(int, int, int, int);
 	
 	Board();
 
@@ -31,7 +31,7 @@ public:
 
 private:
 	Piece * board[board_size][board_size];
-	Piece* dead[32];
+	//Piece* dead[32];
 	int numDead;
 	undo turnHistory;
 

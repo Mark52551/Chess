@@ -29,7 +29,7 @@ void undo::push(storedMove * move)
 //{
 //}
 
-bool undo::pop(storedMove* lastmove)
+bool undo::pop(storedMove& lastmove)
 {
 	if (top == nullptr)
 	{

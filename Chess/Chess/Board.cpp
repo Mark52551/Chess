@@ -103,7 +103,7 @@ bool Board::pickLocation(int srcCol, int srcRow, int col, int row, bool moveturn
 		return true;
 }
 
-storedMove* Board::move(int srcCol, int srcRow, int col, int row)
+void Board::move(int srcCol, int srcRow, int col, int row)
 {
 	storedMove* storemoved = new storedMove();
 
@@ -111,13 +111,15 @@ storedMove* Board::move(int srcCol, int srcRow, int col, int row)
 	{
 		return true;
 	}*/
-	if (board[col][row] != nullptr)
-	{
-		dead[numDead++] = board[col][row];
-		storemoved->capturedPiece = board[col][row];
+	//if (board[col][row] != nullptr)
+	//{
+		//dead[numDead++] = board[col][row];
 		//board[col][row] = nullptr;
 		/*numDead++;*/
-	}
+	//}
+
+	storemoved->capturedPiece = board[col][row];
+	storemoved->pieceMoved = board[srcCol][srcRow];
 	
 	board[col][row] = (board[srcCol][srcRow]);
 	board[srcCol][srcRow] = nullptr;
@@ -125,19 +127,31 @@ storedMove* Board::move(int srcCol, int srcRow, int col, int row)
 	storemoved->srcRow = srcRow;
 	storemoved->col = col;
 	storemoved->row = row;
-	storemoved->pieceMoved = board[col][row];
-	return storemoved;
+	
+	//return storemoved;
+	turnHistory.push(storemoved);
 }
 
 void Board::moveUndo()
 {
 	bool result;
-	storedMove* boardUndo;
+	storedMove boardUndo;
 	result = turnHistory.pop(boardUndo);
 	if (!result)
 		return;
+	/*storedMove correct;
+	bool success = stack.pop(correct);*/
+	board[boardUndo.srcCol][boardUndo.srcRow] = board[boardUndo.col][boardUndo.row];
+	board[boardUndo.col][boardUndo.row] = boardUndo.capturedPiece;
+
+
 }
 
 Board::~Board()
 {
+	for (int i = 0; i < board_size; i++)
+	{
+		delete[] board[i];
+	}
+	delete[] board;
 }

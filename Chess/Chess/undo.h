@@ -7,7 +7,7 @@ class undo
 public:
 
 	void push(storedMove*);
-	bool pop(storedMove*);
+	bool pop(storedMove&);
 
 
 
