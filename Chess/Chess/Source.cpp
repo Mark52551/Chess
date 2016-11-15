@@ -52,7 +52,8 @@ int main()
 			if (mov == undo1 || mov == undo2)
 			{
 				storedMove* correct;
-				//insert the next steps here
+				//bool success = stack.pop(correct);
+				//get pieces and board coordinates from correct and put pieces back where they were
 			}
 
 			cout << "Choose piece (col) :";
@@ -63,8 +64,7 @@ int main()
 			cin >> col;
 			cout << "Choose target square (row) :";
 			cin >> row;
-			//bool success = stack.pop(correct);
-			//get pieces and board coordinates from correct and put pieces back where they were
+			
 			result = myBoard.pickLocation(srcCol, srcRow, col, row, whiteturn);
 			cout << endl;
 			if (!result)
