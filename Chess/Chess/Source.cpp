@@ -22,8 +22,7 @@ int main()
 	Game begin;
 	begin.welcome();
 	begin.main_menu();
-	//begin.display_player_color();
-	//begin.player_turn();
+
 	undo stack;
 	
 	Board myBoard;
@@ -53,8 +52,7 @@ int main()
 			if (mov == undo1 || mov == undo2)
 			{
 				storedMove* correct;
-				//bool success = stack.pop(correct);
-				//get pieces and board coordinates from correct and put pieces back where they were
+				//insert the next steps here
 			}
 
 			cout << "Choose piece (col) :";
@@ -65,6 +63,8 @@ int main()
 			cin >> col;
 			cout << "Choose target square (row) :";
 			cin >> row;
+			//bool success = stack.pop(correct);
+			//get pieces and board coordinates from correct and put pieces back where they were
 			result = myBoard.pickLocation(srcCol, srcRow, col, row, whiteturn);
 			cout << endl;
 			if (!result)
