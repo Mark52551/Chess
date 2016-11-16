@@ -80,7 +80,6 @@ int main()
 				myBoard.display_board();
 			}
 		}while (!result);
-		//stack.push(smove);
 		cout << "Piece moved to: " << col << "," << row << endl;
 		if (whiteturn)
 			whiteturn = false;

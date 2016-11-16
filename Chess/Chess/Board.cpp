@@ -4,10 +4,10 @@
 void Board::display_board()
 {
 	numDead = 0;
-	cout << "       ******************CHESS******************" << endl;
+	cout << "               - WELCOME TO CHESS -     " << endl;
 	cout << "" << endl;
 
-
+	//this will display the board
 	for (int row=0; row < board_size; row++)
 	{
 		cout <<"    " << row << "  |";
@@ -41,6 +41,7 @@ void Board::display_board()
 
 Board::Board()
 {
+	//this section is for all of the seperate pieces that are being created on board
 	board[0][0] = new rook(true);
 	board[1][0] = new knight(true);
 	board[2][0] = new bishop(true);
@@ -49,7 +50,7 @@ Board::Board()
 	board[5][0] = new bishop(true);
 	board[6][0] = new knight(true);
 	board[7][0] = new rook(true);
-
+	// ""     ""    ""        ""
 	board[0][1] = new pawn(true);
 	board[1][1] = new pawn(true);
 	board[2][1] = new pawn(true);
@@ -58,7 +59,8 @@ Board::Board()
 	board[5][1] = new pawn(true);
 	board[6][1] = new pawn(true);
 	board[7][1] = new pawn(true);
-
+	
+	//this section is for all of the empyt spaces that need to be created in the middle of the chest board
 	for (int i = 2; i < 6; i++)
 	{
 		for (int j = 0; j < board_size; j++)
@@ -67,6 +69,7 @@ Board::Board()
 		}
 	}
 
+	//this is the bottom section (black player) pieces that are being created
 	board[0][7] = new rook(false);
 	board[1][7] = new knight(false);
 	board[2][7] = new bishop(false);
@@ -86,8 +89,10 @@ Board::Board()
 	board[7][6] = new pawn(false);
 }
 
+//This is the section where the validation for the pick location will occur
 bool Board::pickLocation(int srcCol, int srcRow, int col, int row, bool moveturn)
 {
+		//validation will occur
 		if (row < 0 || row > 7 || col < 0 || col > 7 || srcCol < 0 || srcCol > 7 || srcRow < 0 || srcRow > 7)
 		{
 			return false;
@@ -99,36 +104,25 @@ bool Board::pickLocation(int srcCol, int srcRow, int col, int row, bool moveturn
 		if (board[col][row] != nullptr)
 			if (board[col][row]->getColor() == board[srcCol][srcRow]->getColor())
 				return false;
-
 		return true;
 }
 
+//this is the section where the move function will be played out
 void Board::move(int srcCol, int srcRow, int col, int row)
 {
 	storedMove* storemoved = new storedMove();
 
-	/*if (board[col][row] == nullptr)
-	{
-		return true;
-	}*/
-	//if (board[col][row] != nullptr)
-	//{
-		//dead[numDead++] = board[col][row];
-		//board[col][row] = nullptr;
-		/*numDead++;*/
-	//}
-
 	storemoved->capturedPiece = board[col][row];
 	storemoved->pieceMoved = board[srcCol][srcRow];
-	
+
 	board[col][row] = (board[srcCol][srcRow]);
 	board[srcCol][srcRow] = nullptr;
+
 	storemoved->srcCol = srcCol;
 	storemoved->srcRow = srcRow;
 	storemoved->col = col;
 	storemoved->row = row;
-	
-	//return storemoved;
+
 	turnHistory.push(storemoved);
 }
 
@@ -136,17 +130,17 @@ void Board::moveUndo()
 {
 	bool result;
 	storedMove boardUndo;
+
 	result = turnHistory.pop(boardUndo);
 	if (!result)
 		return;
-	/*storedMove correct;
-	bool success = stack.pop(correct);*/
+	
 	board[boardUndo.srcCol][boardUndo.srcRow] = board[boardUndo.col][boardUndo.row];
 	board[boardUndo.col][boardUndo.row] = boardUndo.capturedPiece;
 
-
 }
 
+//this is my destructor of the Board function, which will contain all of the information for the stack method being called
 Board::~Board()
 {
 	for (int i = 0; i < board_size; i++)

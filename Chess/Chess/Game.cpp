@@ -3,6 +3,7 @@
 #include <string>
 using namespace std;
 
+//the function for the welcome
 void Game::welcome()
 {
 	cout << "Welcome to Chess!\n" << endl;
@@ -10,12 +11,6 @@ void Game::welcome()
 	cout << "Player 2: Black" << endl;
 	cout << " " << endl;
 	
-}
-
-void Game::display_player_color()
-{
-	//not using anymore
-	//combined with player_turn() function
 }
 
 void Game::player_turn()
@@ -37,21 +32,25 @@ void Game::main_menu()
 	{
 		cout << "Menu:" << endl;
 		cout << "S- Start Game" << endl;
-		//cout << "M- Move" << endl;
 		cout << "E- End Game" << endl;
 		cout << " " << endl;
 		
 		cin >> input;
-		
+		if (input == "s" || input == "S" || input == "e" || input == "E")
+		{ 
+			system("CLS");
+		}
+		else { cout << "Please enter a valid command" << endl; }
+
 		if ( input == start || input == start1)
 		{
-			system("CLS");
+			cout << endl;
 			cout << "Starting Game..." <<endl;
 			cout << " " << endl;
 			cout << "White Player, You will go first!" << endl;
 			cout << " " << endl;
-			//system("PAUSE");
-			
+			cout << "Press any key to continue..." << endl;
+			cin.get();
 		}
 		if (input == endgame || input == endgame1)
 		{
