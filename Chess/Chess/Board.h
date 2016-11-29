@@ -9,6 +9,7 @@
 #include "rook.h"
 #include "storedMove.h"
 #include "undo.h"
+#include <fstream>
 using namespace std;
 
 const int board_size = 8;
@@ -23,7 +24,7 @@ public:
 	//void display_piece();
 	bool pickLocation(int, int, int, int, bool);
 	void move(int, int, int, int);
-	
+	void filename(string);
 	Board();
 
 	~Board();

@@ -149,3 +149,36 @@ Board::~Board()
 	}
 	delete[] board;
 }
+
+void Board::filename(string fileName)
+{
+	
+	if (fileName == " " || fileName == "")
+	{
+		ofstream file;
+		file.open("file.txt");
+		for (int i = 0; i < board_size; i++)
+		{
+			for (int z = 0; z < board_size; z++)
+			{
+				if (board[z][i] == nullptr)
+				{
+					file << "-- ";
+				}
+				else file << board[z][i]->getPiece() << " ";
+			}
+			file << endl;
+		}file.close();
+	}else
+	{
+		ifstream file;
+		file.open(fileName);
+		if (file.fail())
+		{
+			throw string("Invalid file name");
+		}
+	}
+	
+	
+	
+}
