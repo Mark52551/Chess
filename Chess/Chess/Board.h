@@ -24,7 +24,8 @@ public:
 	//void display_piece();
 	bool pickLocation(int, int, int, int, bool);
 	void move(int, int, int, int);
-	void filename(string);
+	void saveFile(string);
+	void loadFile(string);
 	Board();
 
 	~Board();

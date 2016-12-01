@@ -18,13 +18,28 @@ int main()
 	int row;
 	int col;
 	bool whiteturn = true;
-	
+
+	Board myBoard;
 	Game begin;
 	begin.welcome();
-	begin.main_menu();
+	bool loop = false;
+	do {
+		try
+		{
+			begin.main_menu(myBoard);
+		}
+		catch (const std::string& error)
+		{
+			system("CLR");
+			cout << error;
+			system("PAUSE");
+			begin.main_menu(myBoard);
+			loop = true;
+		}
+	} while (loop);
 
 	
-	Board myBoard;
+	
 	bool result;
 	myBoard.display_board();
 	do
@@ -45,13 +60,14 @@ int main()
 			do
 			{
 
-				cout << endl << "E/e-Exit     M/m-Move    U/u-Undo    W/w-Write     " << endl;
+				cout << endl << "E/e-Exit     M/m-Move    U/u-Undo    W/w-Write    " << endl;
+				cout << "**W/w...wfile.txt**" << endl;
 
 				cin >> mov;
 
 				if (mov[0] == write1 || mov[0] == write2)
 				{
-					myBoard.filename(mov.erase (0));
+					myBoard.saveFile(mov);
 					result = true;
 				}
 

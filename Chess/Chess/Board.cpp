@@ -150,35 +150,96 @@ Board::~Board()
 	delete[] board;
 }
 
-void Board::filename(string fileName)
+void Board::saveFile(string fileName)
 {
 	
-	if (fileName == " " || fileName == "")
+	ofstream file;
+	file.open(fileName.erase(0,1));
+	if (file.fail())
 	{
-		ofstream file;
-		file.open("chessgame.txt");
-		for (int i = 0; i < board_size; i++)
-		{
-			for (int z = 0; z < board_size; z++)
-			{
-				if (board[z][i] == nullptr)
-				{
-					file << "-- ";
-				}
-				else file << board[z][i]->getPiece() << " ";
-			}
-			file << endl;
-		}file.close();
-	}else
-	{
-		ifstream file;
-		file.open(fileName);
-		if (file.fail())
-		{
-			throw string("Invalid file name");
-		}
+		file.close();
+		throw string("Invalid file name");
 	}
+	for (int i = 0; i < board_size; i++)
+	{
+		for (int z = 0; z < board_size; z++)
+		{
+			if (board[z][i] == nullptr)
+			{
+				file << "-- ";
+			}
+			else file << board[z][i]->getPiece() << " ";
+		}
+		file << endl;
+	}file.close();
+
 	
-	
-	
+}
+
+void Board::loadFile(string fileName)
+{
+	ifstream file;
+	file.open(fileName.erase(0,1));
+	if (file.fail())
+	{
+		file.close();
+		throw string("Invalid file name");
+	}
+
+	int row = 0;
+	int col = 0;
+
+	while (!file.eof())
+	{
+		string str;
+		file >> str;
+		if(str == "")
+		{
+			continue;
+		}
+		if (board[col][row] != nullptr) 
+		{
+			delete board[col][row];
+			board[col][row] = nullptr;
+		}
+		if (str != "--")
+		{
+			bool color = false;
+			if (str[0] == 'W')
+			{
+				color = true;
+			}
+			if (str[1] == 'R')
+			{
+				board[col][row] = new rook(color);
+			}
+			else if (str[1] == 'N')
+			{
+				board[col][row] = new knight(color);
+			}
+			else if (str[1] == 'B')
+			{
+				board[col][row] = new bishop(color);
+			}
+			else if (str[1] == 'Q')
+			{
+				board[col][row] = new queen(color);
+			}
+			else if (str[1] == 'K')
+			{
+				board[col][row] = new king(color);
+			}
+			else if (str[1] == 'P')
+			{
+				board[col][row] = new pawn(color);
+			}
+			
+		}
+		col++;
+		if (col > 7)
+		{
+			row++;
+			col -= 8;
+		}
+	}file.close();
 }

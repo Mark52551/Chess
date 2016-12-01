@@ -20,7 +20,7 @@ void Game::player_turn()
 	cout << " " << endl;
 }
 
-void Game::main_menu()
+void Game::main_menu(Board& board)
 {
 	string start = "s";
 	string start1 = "S";
@@ -36,13 +36,17 @@ void Game::main_menu()
 		cout << " " << endl;
 		
 		cin >> input;
-		if (input == "s" || input == "S" || input == "e" || input == "E")
+		if (input[0] == 's' || input[0] == 'S' || input == "e" || input == "E")
 		{ 
 			system("CLS");
+			if(strlen(input.c_str()) > 1)
+			{
+				board.loadFile(input);
+			}
 		}
 		else { cout << "Please enter a valid command" << endl; }
 
-		if ( input == start || input == start1)
+		if ( input[0] == 's' || input[0] == 'S')
 		{
 			cout << endl;
 			cout << "Starting Game..." <<endl;
@@ -56,21 +60,19 @@ void Game::main_menu()
 		{
 			exit(0);
 		}
-		if (input != start || input != start1 || input != endgame || input != endgame1)
+		if (input[0] != 's' || input[0] != 'S' || input != endgame || input != endgame1)
 		{
 			cout << "" << endl;
 		}
 		else
 		{
-			system("CLS");
-			cout << "Invalid Input\n\n";
-			system("PAUSE");
-			system("CLS");
+			throw string("Invalid input\n");
+			
 		}
 		
 		cin.get();
 	}
-	while (input != start && input != start1 && input != endgame && input != endgame1);
+	while (input[0] != 's' && input[0] != 'S' && input != endgame && input != endgame1);
 
 }
 
