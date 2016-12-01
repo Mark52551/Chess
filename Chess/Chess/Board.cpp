@@ -156,7 +156,7 @@ void Board::filename(string fileName)
 	if (fileName == " " || fileName == "")
 	{
 		ofstream file;
-		file.open("file.txt");
+		file.open("chessgame.txt");
 		for (int i = 0; i < board_size; i++)
 		{
 			for (int z = 0; z < board_size; z++)

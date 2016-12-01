@@ -45,7 +45,7 @@ int main()
 			do
 			{
 
-				cout << "E- Exit\n" "M- Move\n" "U- Undo\n" "W- Write\n" << endl;
+				cout << endl << "E/e-Exit     M/m-Move    U/u-Undo    W/w-Write     " << endl;
 
 				cin >> mov;
 
