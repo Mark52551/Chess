@@ -61,10 +61,8 @@ int main()
 			{
 
 				cout << endl << "E/e-Exit     M/m-Move    U/u-Undo    W/w-Write    " << endl;
-				cout << "**W/w...wfile.txt**" << endl;
-
 				cin >> mov;
-
+				              
 				if (mov[0] == write1 || mov[0] == write2)
 				{
 					myBoard.saveFile(mov);

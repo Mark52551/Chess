@@ -33,7 +33,8 @@ void Game::main_menu(Board& board)
 		cout << "Menu:" << endl;
 		cout << "S- Start Game" << endl;
 		cout << "E- End Game" << endl;
-		cout << " " << endl;
+		cout << "Begin from Saved Game = sfile.txt" << endl;
+		cout << endl;
 		
 		cin >> input;
 		if (input[0] == 's' || input[0] == 'S' || input == "e" || input == "E")
